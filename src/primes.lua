@@ -1,7 +1,3 @@
-local socket = require("socket")
--- local timestamp = socket.gettime()
--- print(timestamp)
-
 local primes = {}
 local np = 0
 
@@ -31,11 +27,11 @@ end
 
 if arg[1] ~= nil then
     np = tonumber(arg[1])
-    local t1 = socket.gettime()
+    local t1 = os.clock()
     fill()
-    local t2 = socket.gettime()
+    local t2 = os.clock()
     local dt = t2 - t1
     print("Time spent:", dt)
     print("Number of elements:", np)
-    print(" Last prime:", primes[np-1])
+    print("Last prime:", primes[np-1])
 end
